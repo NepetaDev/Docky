@@ -53,7 +53,7 @@ CGSize iconSize = CGSizeZero;
         [self addGestureRecognizer:self.dckGestureRecognizer];
     }
 
-    if (dockMode == 3) {
+    else if (dockMode == 3) {
         UIView *backgroundView = [self valueForKey:@"_backgroundView"];
         self.dckScrollView = [[UIScrollView alloc] initWithFrame:[self bounds]];
         [self addSubview:self.dckScrollView];
@@ -265,7 +265,7 @@ CGSize iconSize = CGSizeZero;
 
 -(BOOL)allowsAddingIconCount:(unsigned long long)arg1 {
     if (dockMode == 3) return YES;
-    if (dockMode == 1 || dockMode == 2) {
+    if (dockMode != 0) {
         int count = [[self icons] count];
         return ((arg1 + count) <= [%c(SBRootFolderDockIconListView) maxIcons]);
     }
