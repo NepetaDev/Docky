@@ -7,6 +7,6 @@ TWEAK_NAME = Docky
 $(TWEAK_NAME)_FILES = Tweak.xm
 $(TWEAK_NAME)_FRAMEWORKS += WebKit
 $(TWEAK_NAME)_EXTRA_FRAMEWORKS += Cephei
-ADDITIONAL_OBJCFLAGS = -fobjc-arc
+$(TWEAK_NAME)_CFLAGS = -fobjc-arc -O3
 
 include $(THEOS_MAKE_PATH)/tweak.mk
